@@ -3,7 +3,8 @@
 <ul>
   <% @tasks.each do |task| %>
   <li>
-  <%= link_to task.title, show_path(task) %> / Done: <%= task.completed %>
+  <%= link_to task.title, task_path(task) %> / Done: <%= task.completed %> / <%= link_to "Destroy Task", task_path(task), method: :delete,  data: { confirm: "Are you sure?" } %>
   </li>
   <% end %>
 </ul>
+<%= link_to "Create new Task", tasks_new_path %>
